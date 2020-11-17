@@ -1,0 +1,161 @@
+body{
+    margin: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #FFFFFF 0%, #272B3C 0%, #2175B9 49%, #6192E1 72%, #6DC7D0 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: auto;
+    text-align: center;
+    margin-bottom: 54px;
+}
+/* 
+.login-container{
+    width: 40%;
+    
+
+} */
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 853px;
+    /* height: 40vh; */
+
+    background: #FFFFFFBA 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 48px;
+}
+
+button{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 44px;
+
+    width: 30%;
+    border: none;
+    color: grey;
+    margin: 1em;
+    line-height: 2em;
+}
+button:focus{
+    outline: none;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+}
+
+input:focus{
+    outline: none;
+}
+
+@media only screen and (max-device-width: 420px){
+    .container{
+        flex-direction: column;
+    }
+
+    *{
+        font-size: 36px;
+    }
+
+    .login-container, .logo{
+        width: 100%;
+    }
+
+    form{
+        margin: auto;
+    }
+
+    img{
+        height: 5em;
+        margin: 2em;
+    }
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login_field{
+    text-align: center;
+    border-radius: 36px;
+    background-color: #FFFFFF;
+    color: #707070;
+    border: thin solid #707070;
+    margin-left: 38px;
+    width: 340px;
+}
+
+.form_all{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn{
+    font-size: 26px;
+    text-align: center;
+    color: #707070;
+    margin: 0 auto;
+    width: 127px;
+    padding: 2px 0;
+}
+
+.login_question{
+    margin: 44px 0 0 0;
+    font-size: 26px;
+    word-wrap: normal;
+    width: 144px;
+    color: #707070;
+}
+
+.vertical-margin-127px{
+    margin: 127px 0;
+}
+.margin-left-auto{
+    margin: 0 auto;
+}
+
+.login_p{
+    font-size: 26px;
+    color: #707070;
+    margin: 8px 0 0 38px;
+}
+.login_p1{
+    font-size: 26px;
+    color: #707070;
+    margin: 9px 0 0 38px;
+}
+
+.login-create{
+    margin-right: 29px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-create{
+    margin: 13px 0 120px 0;
+}
+
