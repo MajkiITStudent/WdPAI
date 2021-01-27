@@ -1,0 +1,16 @@
+.d-flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.mx-auto{
+    margin: 0 auto;
+}
+
+@media(min-width:1280px){
+    .md-mr-2rem{
+        margin-right: 2rem;
+    }
+}

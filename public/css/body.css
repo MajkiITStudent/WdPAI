@@ -2,6 +2,13 @@ body{
     margin: 0;
 }
 
+ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 .container{
     width: 100vw;
     height: 100vh;
@@ -43,7 +50,7 @@ button{
     border: 1px solid #707070;
     border-radius: 44px;
 
-    width: 30%;
+    /*width: 30%;*/
     border: none;
     color: grey;
     margin: 1em;
@@ -61,6 +68,7 @@ input{
     margin: 1em;
     width: 50%;
 }
+
 
 input:focus{
     outline: none;
@@ -161,23 +169,10 @@ input:focus{
 
 
 .mainpage{
+    min-height: 100vh;
+    /*width: 100vw;*/
     height: 100%;
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #6DC7D0 48%, #6192E1 75%, #2175B9 100%) 0% 0% no-repeat padding-box;
-}
-
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.header img{
-    height: 86px;
-}
-
-.header button{
-    font-size: 24px;
 }
 
 .main{
@@ -196,12 +191,43 @@ input:focus{
     background-color: #FFFFFF;
     color: #2699fb;
     fill: #2699fb;
-    width: 90vh;
+    width: 90vw;
+    margin-bottom: 25px;
+    padding-top: 1rem;
 }
+
+.mainblock-part h6, .mainblock-part h5, .mainblock-part p, .mainblock-part div{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.mainblock-part button{
+    color: #2175B9;
+    border: solid thin transparent;
+}
+
+.mainblock-part button:hover{
+    border: #7FC4FD thin solid;
+    color: #ffffff;
+    background-color: #2175B9;
+}
+
+.mainblock-part button:active{
+    border: solid thin #2175B9;
+    color: #2175B9;
+    background-color: white;
+}
+
 
 
 .sidepanel{
     display: none;
+}
+
+@media(min-width:800px){
+    .mainblock{
+        overflow: hidden;
+    }
 }
 
 @media (min-width:1280px){
@@ -223,8 +249,10 @@ input:focus{
 
     .mainblock{
         display: flex;
+        flex-direction: row;
         width: 100%;
         justify-content: space-evenly;
+        margin-top: 40px;
     }
 
     .mainblock-blue{
