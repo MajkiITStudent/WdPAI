@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/utilities.css">
     <script src="https://kit.fontawesome.com/b12911381b.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
-    <title>MAIN PAGE</title>
+    <title>ADD EVENT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
     <meta name="language" content="Polish">
@@ -28,45 +28,21 @@
             </ul>
         </nav>
     </header>
-    <div class="main">
-        <div class="mainblock">
-            <div class="mainblock-blue">
-                <div class="mainblock-part">
-                    <h6>LOREM IPSUM</h6>
-                    <h5>Excepteur sint.</h5>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                    <div class="mainblock-part_social">
-                        <p><i class="fas fa-heart"></i>609</p>
-                        <p><i class="fas fa-comments"></i>120</p>
-                        <button type="button">SHARE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="mainblock-blue">
-                <div class="mainblock-part">
-                    <h6>LOREM IPSUM</h6>
-                    <h5>Excepteur sint.</h5>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                    <div class="mainblock-part_social">
-                        <p><i class="fas fa-heart"></i>609</p>
-                        <p><i class="fas fa-comments"></i>120</p>
-                        <button type="button">SHARE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="mainblock-blue">
-                <div class="mainblock-part">
-                    <h6>LOREM IPSUM</h6>
-                    <h5>Excepteur sint.</h5>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                    <div class="mainblock-part_social">
-                        <p><i class="fas fa-heart"></i>609</p>
-                        <p><i class="fas fa-comments"></i>120</p>
-                        <button type="button">SHARE</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section class="addevent">
+        <h1>UPLOAD</h1>
+        <form class="add_event" action="addEvent" method="POST" ENCTYPE="multipart/form-data">
+            <?php if(isset($messages)){
+                foreach ($messages as $message) {
+                    echo $message;
+                }
+            }
+            ?>
+            <input name="title" type="text" placeholder="title">
+            <textarea name="description" rows="5" placeholder="description"></textarea>
+
+            <input type="file" name="file">
+            <button type="submit">send</button>
+        </form>
+    </section>
     
 </body>

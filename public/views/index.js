@@ -1,25 +1,23 @@
 
-const menuBtn = document.querySelector('.menu_btn');
+const menuBtn = document.querySelector('.menu_btn'); //wybranie elementu
 const menuSide = document.querySelector('.small_menu');
-//const menuBurger = document.querySelector('.menu_btn-burger');
+
 let menuOpen = false;
 menuBtn.addEventListener('click', ()=> {
     if(!menuOpen){
-        menuBtn.classList.add('open');
+        menuBtn.classList.add('open'); //nadanie klasy po kliknieciu jezeli jej nie ma
         menuSide.classList.add('open');
-        //menuBurger.classList.add('open');
         menuOpen = true;
     } else{
         menuBtn.classList.remove('open');
         menuSide.classList.remove('open');
-        //menuBurger.classList.remove('open');
         menuOpen = false;
     }
 });
 
 const collapseContentHeight = document.querySelector('.collapsible__content').scrollHeight + 'px';
-console.log(collapseContentHeight);
-if(window.innerWidth < '670'){
+console.log(collapseContentHeight); //zczytanie wielkosci elemenut
+if(window.innerWidth < '670'){ //jezeli szerokosc ekranu jest mniejsza niz 670px element zosjtaje ukryty
     document.querySelector('.collapsible__content').style.maxHeight = 0;
 }
 
@@ -28,7 +26,7 @@ document.querySelectorAll('.search_collapse').forEach(button => {
         const collapseContent = document.querySelector('.collapsible__content');
         button.classList.toggle('.search_collapse--active');
 
-        if (button.classList.contains('.search_collapse--active')){
+        if (button.classList.contains('.search_collapse--active')){ //rozwiniecie elementu do jego pierwotnej dlugosci
             collapseContent.style.maxHeight = collapseContentHeight; 
         }
         else{

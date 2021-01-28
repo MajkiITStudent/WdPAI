@@ -167,6 +167,28 @@ input:focus{
     margin: 13px 0 120px 0;
 }
 
+.addevent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_event{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+}
+
+.add_event input[type=text]{
+    font-size: 16px;
+}
+
+.add_event textarea{
+    width: 95%;
+}
 
 .mainpage{
     min-height: 100vh;
@@ -187,7 +209,10 @@ input:focus{
     align-items: center;
 }
 
+
+
 .mainblock-part{
+
     background-color: #FFFFFF;
     color: #2699fb;
     fill: #2699fb;
@@ -196,9 +221,16 @@ input:focus{
     padding-top: 1rem;
 }
 
+.mainblock-part img{
+    width: 90vw;
+    margin: 0;
+    height: auto;
+}
+
 .mainblock-part h6, .mainblock-part h5, .mainblock-part p, .mainblock-part div{
     margin-left: 15px;
     margin-right: 15px;
+    overflow: auto;
 }
 
 .mainblock-part button{
@@ -250,14 +282,15 @@ input:focus{
     .mainblock{
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 100vw;
         justify-content: space-evenly;
         margin-top: 40px;
     }
 
     .mainblock-blue{
-        padding-top: 200px;
+        /*padding-top: 200px;*/
         background-color: #7FC4FD;
+        width: 25vw;
     }
 
     .mainblock-part{
@@ -269,6 +302,22 @@ input:focus{
         display: none;
     }
 
+    .mainblock-part img{
+        width: 100%;
+    }
+
 
 }
+
+/*section.addevent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.addevent > form {
+    display: flex;
+    flex-direction: column;
+}*/
 
