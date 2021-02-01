@@ -10,4 +10,5 @@ Routing::get('index', 'DefaultController');
 Routing::get('mainpage', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('addEvent', 'EventController');
+Routing::post('register', 'SecurityController');
 Routing::run($path);
