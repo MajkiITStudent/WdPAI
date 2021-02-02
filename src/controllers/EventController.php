@@ -48,17 +48,20 @@ class EventController extends AppController
 
     public function search()
     {
-        /*$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        //pobranie content type, jeśli cos sie tam znajduje, w przeciwnym razie przypisujemy puste
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
         if ($contentType === "application/json") {
+            //pobranie kontentu i jego dokodowanie z json
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
 
             header('Content-type: application/json');
             http_response_code(200);
 
-            echo json_encode($this->projectRepository->getProjectByTitle($decoded['search']));
-        }*/
+            //zwrocenie pasujacych do wyszukiwania w postaci json
+            echo json_encode($this->eventRepository->getEventsTitle($decoded['search']));
+        }
     }
 
     private function validate(array $file){

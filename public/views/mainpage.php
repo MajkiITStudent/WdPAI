@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/utilities.css">
     <script src="https://kit.fontawesome.com/b12911381b.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>MAIN PAGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
@@ -18,7 +19,7 @@
             <div class="menu_btn"><div class="menu_btn-burger"></div></div>
         </div>
         <div class="collapsible__content">
-            <input  type="text" placeholder="Search for a team...">
+            <input  type="text" placeholder="Search for an event...">
         </div>
         <nav class="small_menu">
             <ul class="small_menu-list">
@@ -29,7 +30,7 @@
         </nav>
     </header>
     <div class="main">
-        <div class="mainblock">
+        <section class="mainblock">
             <?php foreach($events as $event): ?>
                 <div id="event-1">
                         <div class="mainblock-part">
@@ -37,13 +38,28 @@
                             <img src="public/uploads/<?= $event->GetImage(); ?>">
                             <p><?= $event->GetDescription(); ?></p>
                             <div class="mainblock-part_social">
-                                <p><i class="fas fa-heart"></i>609</p>
-                                <p><i class="fas fa-comments"></i>120</p>
+                                <p><i class="fas fa-heart"></i>0</p>
+                                <p><i class="fas fa-comments"></i>0</p>
                                 <button type="button">SHARE</button>
                             </div>
                         </div>
                 </div>
             <?php endforeach; ?>
-        </div>
+        </section>
     </div>
 </body>
+
+<template id="event-template">
+    <div id="">
+        <div class="mainblock-part">
+            <h5>title</h5>
+            <img src="">
+            <p>description</p>
+            <div class="mainblock-part_social">
+                <p><i class="fas fa-heart"> 0</i></p>
+                <p><i class="fas fa-comments"> 0</i></p>
+                <button type="button">SHARE</button>
+            </div>
+        </div>
+    </div>
+</template>
