@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/register.js" defer></script>
     <title>SIGN IN PAGE</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                         }
                         ?>
                     </div>
-                    <input name="email" type="text" placeholder="email@email.com">
+                    <input name="email" type="email" placeholder="email@email.com">
                     <input name="password" type="password" placeholder="password">
                     <input name="confirmedPassword" type="password" placeholder="confirm password">
                     <input name="name" type="text" placeholder="name">
@@ -27,7 +28,6 @@
                     <input name="phone" type="text" placeholder="phone">
                     <button type="submit">Sign in</button>
                 </div>
-                
             </form>
         </div>
     </div>

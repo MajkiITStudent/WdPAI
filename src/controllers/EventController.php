@@ -20,6 +20,12 @@ class EventController extends AppController
         $this->eventRepository = new EventRepository();
     }
 
+    // wyswietlanie wszystkich wydarzen zawartych w eventRepository
+    public function events(){
+        $events = $this->eventRepository->getEvents();
+        //zmienna z pobranymi widokami w postaci tablicy asocjacyjnej przekazujemy na widok
+        $this->render('mainpage', ['events' => $events]);
+    }
 
     public function addEvent()
     {
@@ -34,10 +40,25 @@ class EventController extends AppController
             $this->eventRepository->addEvent($event);
 
 
-            return $this->render('mainpage', ['messages' => $this->message, 'event' => $event]);
+            return $this->render('mainpage', ['messages' => $this->message, 'events' => $this->eventRepository->getEvents()]);
         }
 
         return $this->render('addevent', ['messages' => $this->message]);
+    }
+
+    public function search()
+    {
+        /*$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->projectRepository->getProjectByTitle($decoded['search']));
+        }*/
     }
 
     private function validate(array $file){
@@ -52,5 +73,6 @@ class EventController extends AppController
         }
         return true;
     }
+
 
 }

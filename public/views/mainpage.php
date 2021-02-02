@@ -30,31 +30,20 @@
     </header>
     <div class="main">
         <div class="mainblock">
-            <div class="mainblock-blue">
-                <div class="mainblock-part">
-                    <h5><?= $event->GetTitle() ?></h5>
-                    <img src="public/uploads/<?= $event->GetImage() ?>">
-                    <p><?= $event->GetDescription() ?></p>
-                    <div class="mainblock-part_social">
-                        <p><i class="fas fa-heart"></i>609</p>
-                        <p><i class="fas fa-comments"></i>120</p>
-                        <button type="button">SHARE</button>
-                    </div>
+            <?php foreach($events as $event): ?>
+                <div id="event-1">
+                        <div class="mainblock-part">
+                            <h5><?= $event->GetTitle(); ?></h5>
+                            <img src="public/uploads/<?= $event->GetImage(); ?>">
+                            <p><?= $event->GetDescription(); ?></p>
+                            <div class="mainblock-part_social">
+                                <p><i class="fas fa-heart"></i>609</p>
+                                <p><i class="fas fa-comments"></i>120</p>
+                                <button type="button">SHARE</button>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="mainblock-blue">
-                <div class="mainblock-part">
-                    <h6>LOREM IPSUM</h6>
-                    <img src="public/uploads/odseby.jpg">
-                    <h5>Excepteur sint.</h5>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-                    <div class="mainblock-part_social">
-                        <p><i class="fas fa-heart"></i>609</p>
-                        <p><i class="fas fa-comments"></i>120</p>
-                        <button type="button">SHARE</button>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

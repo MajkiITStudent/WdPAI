@@ -44,7 +44,7 @@ class EventRepository extends Repository
         ');
 
         //do zrobienia, wartosc powinna byc zwracana jako sesja danego uzytkownika
-        $assignedById = 1;
+        $assignedById = 6;
 
         $stmt->execute([
             $event->getTitle(),
@@ -53,5 +53,46 @@ class EventRepository extends Repository
             $date->format('Y-m-d'),
             $assignedById
         ]);
+    }
+
+    public function getEvents(): array
+    {
+        $result = [];
+        //pobieramy z bazy danych wszystkie wydarzenia zawarte w tabelce events
+        $stmt = $this->database->connect()->prepare('SELECT * FROM events;');
+
+        //wykonanie zapytania
+        $stmt->execute();
+        //wynik zapytania przypisuje do tymczasowej zmiennej
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($events as $event) {
+            //przypisanie nowego obiektu wydarzenia, przekazuje za pomoca iterowanego obiektu
+            //odpowiednie argumenty do konstruktora
+            $result[] = new Event($event['title'], $event['description'], $event['image']);
+        }
+
+        //zwrócenie wyniku jako lista wszystkich wydarzen
+        return $result;
+    }
+
+    //wyszukiwanie wydarzen po ich nazwie
+    public function getEventsTitle(string $searchString)
+    {
+        //nadpisanie zmiennej, zmiana liter na male, mozliwosc wyszukawania podanego hasla
+        //w srodku nazwy danego projektu
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        //zapytanie do bazy danych o nazwy wydarzen ktore pasuja do podanego zapytania
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM events WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
+        ');
+        // w miejsce klucza search wstawiamy wyszukiwane przez nas haslo
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        //wykonanie
+        $stmt->execute();
+
+        //zwraca tablice asocjacyjna
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
