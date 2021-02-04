@@ -16,7 +16,9 @@ class Routing {
     }
 
     public static function run($url){
-        $action = explode("/",$url)[0];
+        //fragmenty url'a oddzielone slashem
+        $parts = explode("/",$url);
+        $action = $parts[0];
 
         if(!array_key_exists($action,self::$routes)){
             die("Url not correct");
@@ -24,8 +26,11 @@ class Routing {
 
         $controller = self::$routes[$action];
         $object = new $controller;
+        $action = $action ?: 'index';
 
-        $object->$action (); //wywołanie akcji z controllera
+        //druga czesc url to id projektu
+        $id = $parts[1] ?? '';
+        $object->$action($id); //wywołanie akcji z controllera
     }
 
 }

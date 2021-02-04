@@ -6,12 +6,17 @@ class Event
     private $title;
     private $description;
     private $image;
+    private $like;
+    private $id;
 
-    public function __construct($title, $description, $image)
+    public function __construct($title, $description, $image, $like = 0, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
+        $this->like = $like;
+        $this->id = $id;
+
     }
 
 
@@ -44,6 +49,27 @@ class Event
     {
         $this->image = $image;
     }
+
+    public function getLike(): int
+    {
+        return $this->like;
+    }
+
+    public function setLike(int $like)
+    {
+        $this->like = $like;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
 
 
 }

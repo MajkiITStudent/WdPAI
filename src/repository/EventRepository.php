@@ -69,7 +69,7 @@ class EventRepository extends Repository
         foreach ($events as $event) {
             //przypisanie nowego obiektu wydarzenia, przekazuje za pomoca iterowanego obiektu
             //odpowiednie argumenty do konstruktora
-            $result[] = new Event($event['title'], $event['description'], $event['image']);
+            $result[] = new Event($event['title'], $event['description'], $event['image'], $event['like'], $event['id']);
         }
 
         //zwrócenie wyniku jako lista wszystkich wydarzen
@@ -94,5 +94,16 @@ class EventRepository extends Repository
 
         //zwraca tablice asocjacyjna
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //funkcja odpowiedzialna za aktualizacje serduszek w projekcie
+    public function like(int $id) {
+        // statement, inkrementacja kolumny like
+        $stmt = $this->database->connect()->prepare('
+            UPDATE events SET "like" = "like" + 1 WHERE id = :id
+         ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }

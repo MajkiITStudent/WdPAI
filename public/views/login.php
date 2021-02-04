@@ -8,7 +8,7 @@
         <div class="logo">
             <img src="public/img/logo.svg">
         </div>
-        <div class="login-container">
+        <form class="login-container">
             <form class="form_all" action="login" method="POST">
                 <div class="login">
                     <div class="messages">
@@ -26,12 +26,13 @@
                 </div>
                 
                 <button type="submit" class="btn vertical-margin-127px margin-left-auto">LOGIN</button>
-                <div class="login-create">
-                    <p class="login_question">Don't have an account?</p>
-                    <button type="submit" class="btn btn-create">Sign in</button>
-                </div>
                 
             </form>
+            <a href="register"</a>
+            <div class="login-create">
+                <p class="login_question">Don't have an account?</p>
+                <button class="btn btn-create">Sign in</button>
+            </div>
         </div>
     </div>
 </body>

@@ -64,6 +64,12 @@ class EventController extends AppController
         }
     }
 
+    //odwolanie do repozyteorium eventow
+    public function like(int $id) {
+        $this->eventRepository->like($id);
+        http_response_code(200);
+    }
+
     private function validate(array $file){
         if ($file['size'] > self::MAX_FILE_SIZE) {
             $this->message[] = 'File is too large for destination file system.';

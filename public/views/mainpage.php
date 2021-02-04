@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/b12911381b.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/likes.js" defer></script>
     <title>MAIN PAGE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
@@ -32,17 +33,17 @@
     <div class="main">
         <section class="mainblock">
             <?php foreach($events as $event): ?>
-                <div id="event-1">
-                        <div class="mainblock-part">
-                            <h5><?= $event->GetTitle(); ?></h5>
-                            <img src="public/uploads/<?= $event->GetImage(); ?>">
-                            <p><?= $event->GetDescription(); ?></p>
-                            <div class="mainblock-part_social">
-                                <p><i class="fas fa-heart"></i>0</p>
-                                <p><i class="fas fa-comments"></i>0</p>
-                                <button type="button">SHARE</button>
-                            </div>
+                <div id="<?= $event->getId(); ?>">
+                    <div class="mainblock-part">
+                        <h5><?= $event->getTitle(); ?></h5>
+                        <img src="public/uploads/<?= $event->getImage(); ?>">
+                        <p><?= $event->getDescription(); ?></p>
+                        <div class="mainblock-part_social">
+                            <p><i class="fas fa-heart"><?= $event->getLike(); ?></i></p>
+                            <p><i class="fas fa-comments">0</i></p>
+                            <button type="button">SHARE</button>
                         </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </section>
