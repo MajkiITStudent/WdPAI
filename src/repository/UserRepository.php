@@ -27,6 +27,7 @@ class UserRepository extends Repository
         }
         //tworzenie nowego obiektu user na podstawie tablicy asocjacyjnej
         return new User(
+            $user['id'],
             $user['email'],
             $user['password'],
             $user['name'],

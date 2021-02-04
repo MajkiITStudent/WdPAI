@@ -19,6 +19,14 @@
             <button type="button" class="search_collapse"><div class="search_collapse_glass collapsible_button"></div></button>
             <div class="menu_btn"><div class="menu_btn-burger"></div></div>
         </div>
+        <?
+        session_start();
+        $cookie_name = "name";
+        setcookie($cookie_name, $_SESSION['name'], time()+900);
+        if(isset($_COOKIE[$cookie_name])) {
+            echo "Witaj ".$_COOKIE[$cookie_name]." id= ".$_SESSION['id'];
+        }
+        ?>
         <div class="collapsible__content">
             <input  type="text" placeholder="Search for an event...">
         </div>

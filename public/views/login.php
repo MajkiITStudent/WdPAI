@@ -8,7 +8,7 @@
         <div class="logo">
             <img src="public/img/logo.svg">
         </div>
-        <form class="login-container">
+        <div class="login-container">
             <form class="form_all" action="login" method="POST">
                 <div class="login">
                     <div class="messages">

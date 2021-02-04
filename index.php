@@ -14,4 +14,5 @@ Routing::post('addEvent', 'EventController');
 Routing::post('register', 'SecurityController');
 Routing::post('search', 'EventController');
 Routing::get('like', 'EventController');
+Routing::post('logout', 'SecurityController');
 Routing::run($path);

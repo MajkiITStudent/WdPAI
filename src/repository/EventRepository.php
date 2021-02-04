@@ -43,8 +43,9 @@ class EventRepository extends Repository
             VALUES (?, ?, ?, ?, ?)
         ');
 
-        //do zrobienia, wartosc powinna byc zwracana jako sesja danego uzytkownika
-        $assignedById = 6;
+        session_start();
+
+        $assignedById = $_SESSION['id'];
 
         $stmt->execute([
             $event->getTitle(),
@@ -53,6 +54,10 @@ class EventRepository extends Repository
             $date->format('Y-m-d'),
             $assignedById
         ]);
+
+        //przeniesienie na strone glowna po dodaniu projektu
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/events");
     }
 
     public function getEvents(): array
